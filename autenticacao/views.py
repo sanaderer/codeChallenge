@@ -36,3 +36,9 @@ def addprodutos(request):
     match request.method:
         case 'GET':
             pass
+
+def addcliente(request):
+    return render(request, 'addcliente.html')
+    match request.method:
+        case 'GET':
+            pass

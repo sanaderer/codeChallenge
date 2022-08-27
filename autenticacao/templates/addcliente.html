@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Cliente</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Cadastrar Cliente</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <form name="form" id="form"  action="{% if db %}/update/{{db.id}}/{%else%}/create/{% endif %}" method="post">
+            {% csrf_token %}
+            <div class="form-group mt-4">Nome: </div>
+            <input name="nome" class="nome" type="text">
+            <div class="form-group mt-4">CPF: </div>
+            <input name="cpf" class="cpf" type="text">
+            <div class="form-group mt-4">Data de Nascimento: </div>
+            <input name="data_nascimento" class="data_nascimento" type="text" >
+            <div class="form-group mt-4">Telefone: </div>
+            <input name="telefone" class="telefone" type="text" >
+            <div class="form-group mt-4">E-mail: </div>
+            <input name="email" class="email" type="text" >
+
+            <div class="col-8 m-auto pt-3 pb-2 text-center">
+                <a href="{% url 'index'%}" class="btn btn-info">Voltar</a>
+                <input type="submit" class="btn btn-success" value="Salvar">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
