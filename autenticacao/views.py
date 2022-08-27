@@ -17,3 +17,9 @@ def servicos(request):
     match request.method:
         case 'GET':
             pass
+
+def produtos(request):
+    return render(request, 'produtos.html')
+    match request.method:
+        case 'GET':
+            pass
