@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Adicionar Cliente</title>
+    <title>Adicionar Serviço/Produto prestado</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <h1>Adicionar Cliente</h1>
+        <h1>Adicionar Serviço/Produto prestado</h1>
     </div>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
@@ -17,24 +17,16 @@
             {% csrf_token %}
             <div class="form-group mt-4">Nome: </div>
             <input name="nome" class="form-control" type="text">
-            <div class="form-group mt-4">CPF: </div>
-            <input name="cpf" class="form-control" type="text">
-            <div class="form-group mt-4">Data de Nascimento: </div>
+            <div class="form-group mt-4">Serviço Prestado: </div>
+            <input name="" class="form-control" type="text">
+            <div class="form-group mt-4">Produto vendido: </div>
             <input name="data_nascimento" class="form-control" type="date">
-            <div class="form-group mt-4">Telefone: </div>
-            <input name="telefone" class="form-control" type="text">
-            <div class="form-group mt-4">E-mail: </div>
-            <input name="email" class="email" type="text">
             <div class="form-group mt-4">Veiculo: </div>
-            <input name="email" class="email" type="text">
-            <div class="form-group mt-4">E-mail: </div>
-            <input name="email" class="email" type="text">
-            <div class="form-group mt-4">E-mail: </div>
-            <input name="email" class="email" type="text">
-            <div class="form-group mt-4">E-mail: </div>
-            <input name="email" class="email" type="text">
-            <input name="email" class="form-control" type="email">
-
+            <input name="telefone" class="form-control" type="text">
+            <div class="form-group mt-4">Imagem: </div>
+            <input name="telefone" class="form-control" type="text">
+            <div class="form-group mt-4">Veiculo: </div>
+            <input name="telefone" class="form-control" type="text">
 
             <div class="col-8 m-auto pt-3 pb-2 text-center">
                 <a href="{% url 'index'%}" class="btn btn-info">Voltar</a>
