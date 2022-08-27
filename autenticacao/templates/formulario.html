@@ -13,16 +13,16 @@
     </div>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <form name="form" id="form"  action="{% if db %}/update/{{db.id}}/{%else%}/create/{% endif %}" method="post">
+        <form name="form" id="form"  action="{% url 'formulario' %}" method="post">
             {% csrf_token %}
             <div class="form-group mt-4">Nome: </div>
-            <input name="nome" class="nome" type="text">
+            <input name="nome" class="form-control" type="text">
             <div class="form-group mt-4">CPF: </div>
-            <input name="cpf" class="cpf" type="text">
+            <input name="cpf" class="form-control" type="text">
             <div class="form-group mt-4">Data de Nascimento: </div>
-            <input name="data_nascimento" class="data_nascimento" type="text">
+            <input name="data_nascimento" class="form-control" type="date">
             <div class="form-group mt-4">Telefone: </div>
-            <input name="telefone" class="telefone" type="text">
+            <input name="telefone" class="form-control" type="text">
             <div class="form-group mt-4">E-mail: </div>
             <input name="email" class="email" type="text">
             <div class="form-group mt-4">Veiculo: </div>
@@ -33,6 +33,8 @@
             <input name="email" class="email" type="text">
             <div class="form-group mt-4">E-mail: </div>
             <input name="email" class="email" type="text">
+            <input name="email" class="form-control" type="email">
+
 
             <div class="col-8 m-auto pt-3 pb-2 text-center">
                 <a href="{% url 'index'%}" class="btn btn-info">Voltar</a>

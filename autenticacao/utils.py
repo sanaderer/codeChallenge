@@ -3,24 +3,28 @@ import re
 class Valida:
     @staticmethod
     def cpf(cpf: str):
-        regex = re.compile('(?!(\d)\1+\.?\1+\.?\1+-?\1{2})^\d+\.?\d+\.?\d+-?\d{2}$')
+        regex = re.compile(r'(?!(\d)\1+\.?\1+\.?\1+-?\1{2})^\d+\.?\d+\.?\d+-?\d{2}$')
         if regex.findall(cpf):
-            return {'success': True}
+            return True
 
-        return {'success': True}
+        return False
 
     @staticmethod
     def numero(numero: str):
-        regex = re.compile('^\(?\d+\)?\d+-?\d+$')
+        regex = re.compile(r'^\(?(\d{2})\)?9(\d{4})-?(\d{4})$')
         if regex.findall(numero):
-            return {'success': True}
+            return True, regex.sub(r'(\1)9\2-\3', numero)
 
-        return {'success': False}
+        return False
 
     @staticmethod
     def email(email: str):
-        regex = re.compile('[\w]+@\w+\.\w+')
+        regex = re.compile(r'[\w]+@\w+\.\w+')
         if regex.findall(email):
-            return {'success': True}
+            return True
 
-        return {'success': False}
+        return False
+
+    @staticmethod
+    def branco(*args):
+        return not all(list(map(lambda x: x.strip(), args)))
