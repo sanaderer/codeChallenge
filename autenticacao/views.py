@@ -34,3 +34,9 @@ def formulario(request):
     match request.method:
         case 'GET':
             pass
+
+def addprodutos(request):
+    return render(request, 'addprodutos.html')
+    match request.method:
+        case 'GET':
+            pass
