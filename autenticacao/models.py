@@ -52,3 +52,9 @@ class Servico(models.Model):
     def __str__(self):
         return self.nome_servico
 
+class PrestacaoServico(models.Model):
+    nome_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    servico_prestado = models.ForeignKey(Servico, on_delete=models.CASCADE, null=True, blank=True)
+    produto_comprado = models.ForeignKey(Produto, on_delete=models.CASCADE, null=True, blank=True)
+    veiculo_cliente = models.ForeignKey(Veiculo, on_delete=models.CASCADE, null=True, blank=True)
+    imagem_cliente = models.ForeignKey(Imagem, on_delete=models.CASCADE, null=True, blank=True)

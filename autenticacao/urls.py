@@ -2,6 +2,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/remotes/origin/main
     path('index', views.index, name='index'),   
     path('servicos', views.servicos, name='servicos'),
     path('produtos', views.produtos, name='produtos'),
@@ -10,5 +14,11 @@ urlpatterns = [
     path('index/', views.index, name='index'),   
     path('servicos/', views.servicos, name='servicos'),
     path('produtos/', views.produtos, name='produtos'),
+<<<<<<< HEAD
+    path('formulario/', views.formulario, name='formulario'),
+    path('addcçoemte/', views.addcliente, name='addcliente'),
+
+=======
     path('formulario/', views.formulario, name='formulario')
+>>>>>>> refs/remotes/origin/main
 ]
