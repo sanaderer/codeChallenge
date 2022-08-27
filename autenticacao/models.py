@@ -43,7 +43,7 @@ class Protocolo(models.Model):
         return f'Protocolo de {self.pessoa.nome}'
     
 class Servico(models.Model):
-    nome_servico = models.CharField('Servico', max_length=500)
+    nome_servico = models.CharField(max_length=500)
     preco = models.FloatField()
     descricao = models.TextField()
     protocolo = models.ForeignKey(Protocolo, on_delete=models.DO_NOTHING)
