@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from app.models import Cliente, Veiculo, Produto, Protocolo, Servico
+from autenticacao.models import Cliente, Veiculo, Produto, Protocolo, Servico
 
 class ClienteForm(ModelForm):
     class Meta:
