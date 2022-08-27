@@ -12,3 +12,8 @@ def index(request):
         case 'GET':
             pass
 
+def servicos(request):
+    return render(request, 'servicos.html')
+    match request.method:
+        case 'GET':
+            pass
