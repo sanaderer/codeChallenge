@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from autenticacao.models import Cliente
+from autenticacao.forms import ClienteForm
+
 
 # Create your views here.
 def cadastro(request):
@@ -25,7 +28,9 @@ def produtos(request):
             pass
 
 def formulario(request):
-    return render(request, 'formulario.html')
+    data = {}
+    data['formulario'] = ClienteForm()
+    return render(request, 'formulario.html', data)
     match request.method:
         case 'GET':
             pass
