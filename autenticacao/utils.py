@@ -11,9 +11,9 @@ class Valida:
 
     @staticmethod
     def numero(numero: str):
-        regex = re.compile(r'^\(?(\d+)\)?(\d+)-?(\d+)$')
+        regex = re.compile(r'^\(?(\d{2})\)?9(\d{4})-?(\d{4})$')
         if regex.findall(numero):
-            return True, regex.sub(r'(\1)\2-\3', numero)
+            return True, regex.sub(r'(\1)9\2-\3', numero)
 
         return False
 
