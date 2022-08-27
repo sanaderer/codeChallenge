@@ -8,3 +8,7 @@ def cadastro(request):
 
 def index(request):
     return render(request, 'index.html')
+    match request.method:
+        case 'GET':
+            pass
+

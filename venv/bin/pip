@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/home/sabrina-naderer/Área de Trabalho/codeChallenge/venv/bin/python3.10" "$0" "$@"
-' '''
+#!/home/lerson/Projects/codeChallenge/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

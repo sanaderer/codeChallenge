@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import datetime
 
-
 # Create your models here.
 class Cliente(models.Model):
     nome = models.CharField('Nome', max_length=150)
@@ -9,7 +8,6 @@ class Cliente(models.Model):
     data_nascimento = models.DateField('Data de Nascimento')
     telefone = models.CharField('Telefone', max_length=15)
     email = models.EmailField('Email', max_length=255, null=True, blank=True)
-    numero_protocolo = models.CharField('Protocolo', max_length=8)
 
     def __str__(self):
         return self.nome
@@ -33,15 +31,24 @@ class Produto(models.Model):
 
     def __str__(self):
         return self.nome_produto
+
+class Imagem(models.Model):
+    imagem = models.ImageField()
+
+class Protocolo(models.Model):
+    protocolo = models.CharField(max_length=8)
+    pessoa = models.ForeignKey(Cliente, models.DO_NOTHING)
+
+    def __str__(self):
+        return f'Protocolo de {self.pessoa.nome}'
     
 class Servico(models.Model):
     nome_servico = models.CharField('Servico', max_length=500)
     preco = models.FloatField()
     descricao = models.TextField()
-    pessoa = models.ForeignKey(Cliente, on_delete=models.DO_NOTHING)
+    protocolo = models.ForeignKey(Protocolo, on_delete=models.DO_NOTHING)
+    imagem = models.ForeignKey(Imagem, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome_servico
-    
-
 
