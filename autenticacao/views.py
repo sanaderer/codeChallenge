@@ -19,3 +19,9 @@ def produtos(request):
     match request.method:
         case 'GET':
             pass
+
+def formulario(request):
+    return render(request, 'formulario.html')
+    match request.method:
+        case 'GET':
+            pass
