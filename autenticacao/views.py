@@ -39,8 +39,6 @@ def formulario(request):
             telefone = form.data.get('telefone')
             email = form.data.get('email')
 
-            print('telefone', telefone)
-
             branco = Valida.branco(nome, cpf, data_nascimento, telefone, email)
             if branco:
                 return redirect('/formulario')
@@ -49,7 +47,6 @@ def formulario(request):
                 return redirect('/formulario')
 
             numero_valido, numero_formatado = Valida.numero(telefone.replace(' ', ''))
-            print('numero formatado', numero_formatado)
             if not numero_valido:
                 return redirect('/formulario')
 
