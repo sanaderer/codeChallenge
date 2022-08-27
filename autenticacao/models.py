@@ -27,7 +27,6 @@ class Produto(models.Model):
     nome_produto = models.CharField('Produto', max_length=500)
     preco = models.FloatField()
     descricao = models.TextField()
-    pessoa = models.ForeignKey(Cliente, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nome_produto

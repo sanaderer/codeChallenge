@@ -6,7 +6,7 @@ class ClienteForm(ModelForm):
         model = Cliente 
         fields = ['nome', 'cpf', 'data_nascimento','telefone','email']
 
-class VeiculoForm(ModelForm):
+class ProdutoForm(ModelForm):
     class Meta:
-        model = Veiculo
-        fields = ['modelo', 'marca', 'ano', 'cor', 'placa', 'pessoa']
+        model = Produto
+        fields = ['nome_produto', 'preco', 'descricao']

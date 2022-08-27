@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from autenticacao.models import Cliente
-from autenticacao.forms import ClienteForm
+from autenticacao.models import Cliente, Produto
+from autenticacao.forms import ClienteForm, ProdutoForm
 from .utils import Valida
 import datetime
 
@@ -70,10 +70,33 @@ def formulario(request):
     
 
 def addprodutos(request):
-    return render(request, 'addprodutos.html')
     match request.method:
         case 'GET':
-            pass
+            return render(request, 'addprodutos.html')
+
+        case 'POST':
+            form = ProdutoForm(request.POST)
+            nome = form.data.get('nome_produto')
+            preco = form.data.get('preco')
+            descricao = form.data.get('descricao')
+
+            branco = Valida.branco(nome, preco, descricao)
+            if branco:
+                return redirect('/addprodutos')
+
+            try:
+                produto = Produto(
+                    nome_produto=nome,
+                    preco=preco,
+                    descricao=descricao
+                )
+
+                produto.save()
+
+                return redirect('/addprodutos')
+
+            except:
+                return redirect('/addprodutos')
 
 def addcliente(request):
     return render(request, 'addcliente.html')
